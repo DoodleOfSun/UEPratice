@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\TopdownPratice.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\TopdownPratice.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\TopdownPraticeEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\TopdownPratice">
+      <UniqueIdentifier>{115AAE4F-33BC-3D7C-899B-43FE1BBB9DBD}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TopdownPratice\DefenseTower.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\DefenseTower.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\NewAnimInstance.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\NewAnimInstance.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\Projectile.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\Projectile.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopDownNewCharacter.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopDownNewCharacter.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <None Include="..\..\Source\TopdownPratice\TopdownPratice.Build.cs">
+      <Filter>Source\TopdownPratice</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopdownPratice.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopdownPratice.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopdownPraticeCharacter.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopdownPraticeCharacter.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopdownPraticeGameMode.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopdownPraticeGameMode.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopDownPraticeGameStateBase.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopDownPraticeGameStateBase.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopDownPraticeInstance.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopDownPraticeInstance.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopdownPraticePlayerController.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\TopdownPraticePlayerController.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

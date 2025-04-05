@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\intermediate\\build\\win64\\unrealeditor\\inc\\topdownpratice\\uht\\defensetower.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\intermediate\\build\\win64\\x64\\topdownpraticeeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\topdownpratice\\definitions.topdownpratice.h",
+            "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\source\\topdownpratice\\defensetower.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\boxcomponent.generated.h",
+            "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\intermediate\\build\\win64\\unrealeditor\\inc\\topdownpratice\\uht\\defensetower.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

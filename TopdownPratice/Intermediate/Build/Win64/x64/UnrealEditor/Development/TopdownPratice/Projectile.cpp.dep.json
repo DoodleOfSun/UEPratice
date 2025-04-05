@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\source\\topdownpratice\\projectile.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\intermediate\\build\\win64\\x64\\topdownpraticeeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\topdownpratice\\definitions.topdownpratice.h",
+            "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\source\\topdownpratice\\projectile.h",
+            "c:\\users\\owner\\desktop\\projectforue\\uepratice\\topdownpratice\\intermediate\\build\\win64\\unrealeditor\\inc\\topdownpratice\\uht\\projectile.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
