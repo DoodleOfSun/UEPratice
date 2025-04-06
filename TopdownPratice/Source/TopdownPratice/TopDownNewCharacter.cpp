@@ -3,6 +3,7 @@
 
 #include "TopDownNewCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "NewAnimInstance.h"
 
 // Sets default values
 ATopDownNewCharacter::ATopDownNewCharacter()
@@ -46,7 +47,8 @@ void ATopDownNewCharacter::BeginPlay()
 void ATopDownNewCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	UNewAnimInstance* animInst = Cast<UNewAnimInstance>(GetMesh()->GetAnimInstance());
+	animInst->Speed = GetCharacterMovement()->Velocity.Size();
 }
 
 // Called to bind functionality to input
