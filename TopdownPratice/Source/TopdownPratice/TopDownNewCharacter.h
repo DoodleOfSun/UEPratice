@@ -55,17 +55,29 @@ public:
 		Category = "Pangaea | PlayerCharacter")
 	bool CanAttack();
 
+	UFUNCTION(BlueprintCallable,
+		Category = "Pangaea | PlayerCharacter")
 	void Attack();
-	void Hit(int damage);
+
+	/*
+	UFUNCTION(BlueprintCallable,
+		Category = "Pangaea | PlayerCharacter")
+	void Hit(int damage);*/
+
+
+	UFUNCTION(BlueprintCallable,
+		Category = "Pangaea | PlayerCharacter")
+	void DieProcess();
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	
+	// 여기에 protected 블록 있음
 
-protected:
-	void DieProcess();
-
+	// protected 블록 종료
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera",
 		meta = (AllowPrivateAccess = "true"))

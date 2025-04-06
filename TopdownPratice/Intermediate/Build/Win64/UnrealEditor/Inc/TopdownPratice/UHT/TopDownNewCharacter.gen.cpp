@@ -18,6 +18,36 @@ TOPDOWNPRATICE_API UClass* Z_Construct_UClass_ATopDownNewCharacter_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TopdownPratice();
 // End Cross Module References
 
+// Begin Class ATopDownNewCharacter Function Attack
+struct Z_Construct_UFunction_ATopDownNewCharacter_Attack_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Pangaea | PlayerCharacter" },
+		{ "ModuleRelativePath", "TopDownNewCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATopDownNewCharacter_Attack_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATopDownNewCharacter, nullptr, "Attack", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATopDownNewCharacter_Attack_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATopDownNewCharacter_Attack_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ATopDownNewCharacter_Attack()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATopDownNewCharacter_Attack_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ATopDownNewCharacter::execAttack)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->Attack();
+	P_NATIVE_END;
+}
+// End Class ATopDownNewCharacter Function Attack
+
 // Begin Class ATopDownNewCharacter Function CanAttack
 struct Z_Construct_UFunction_ATopDownNewCharacter_CanAttack_Statics
 {
@@ -64,6 +94,42 @@ DEFINE_FUNCTION(ATopDownNewCharacter::execCanAttack)
 	P_NATIVE_END;
 }
 // End Class ATopDownNewCharacter Function CanAttack
+
+// Begin Class ATopDownNewCharacter Function DieProcess
+struct Z_Construct_UFunction_ATopDownNewCharacter_DieProcess_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Pangaea | PlayerCharacter" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/*\n\x09UFUNCTION(BlueprintCallable,\n\x09\x09""Category = \"Pangaea | PlayerCharacter\")\n\x09void Hit(int damage);*/" },
+#endif
+		{ "ModuleRelativePath", "TopDownNewCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "UFUNCTION(BlueprintCallable,\n        Category = \"Pangaea | PlayerCharacter\")\nvoid Hit(int damage);" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATopDownNewCharacter_DieProcess_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATopDownNewCharacter, nullptr, "DieProcess", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATopDownNewCharacter_DieProcess_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATopDownNewCharacter_DieProcess_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ATopDownNewCharacter_DieProcess()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATopDownNewCharacter_DieProcess_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ATopDownNewCharacter::execDieProcess)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->DieProcess();
+	P_NATIVE_END;
+}
+// End Class ATopDownNewCharacter Function DieProcess
 
 // Begin Class ATopDownNewCharacter Function GetHealthPoints
 struct Z_Construct_UFunction_ATopDownNewCharacter_GetHealthPoints_Statics
@@ -160,7 +226,9 @@ void ATopDownNewCharacter::StaticRegisterNativesATopDownNewCharacter()
 {
 	UClass* Class = ATopDownNewCharacter::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "Attack", &ATopDownNewCharacter::execAttack },
 		{ "CanAttack", &ATopDownNewCharacter::execCanAttack },
+		{ "DieProcess", &ATopDownNewCharacter::execDieProcess },
 		{ "GetHealthPoints", &ATopDownNewCharacter::execGetHealthPoints },
 		{ "IsKilled", &ATopDownNewCharacter::execIsKilled },
 	};
@@ -224,7 +292,9 @@ struct Z_Construct_UClass_ATopDownNewCharacter_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_ATopDownNewCharacter_Attack, "Attack" }, // 886596868
 		{ &Z_Construct_UFunction_ATopDownNewCharacter_CanAttack, "CanAttack" }, // 4270625953
+		{ &Z_Construct_UFunction_ATopDownNewCharacter_DieProcess, "DieProcess" }, // 1338128250
 		{ &Z_Construct_UFunction_ATopDownNewCharacter_GetHealthPoints, "GetHealthPoints" }, // 3964121592
 		{ &Z_Construct_UFunction_ATopDownNewCharacter_IsKilled, "IsKilled" }, // 2540048451
 	};
@@ -291,10 +361,10 @@ ATopDownNewCharacter::~ATopDownNewCharacter() {}
 struct Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_TopDownNewCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ATopDownNewCharacter, ATopDownNewCharacter::StaticClass, TEXT("ATopDownNewCharacter"), &Z_Registration_Info_UClass_ATopDownNewCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATopDownNewCharacter), 3167953043U) },
+		{ Z_Construct_UClass_ATopDownNewCharacter, ATopDownNewCharacter::StaticClass, TEXT("ATopDownNewCharacter"), &Z_Registration_Info_UClass_ATopDownNewCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATopDownNewCharacter), 670908320U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_TopDownNewCharacter_h_3429925403(TEXT("/Script/TopdownPratice"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_TopDownNewCharacter_h_1246851655(TEXT("/Script/TopdownPratice"),
 	Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_TopDownNewCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_TopDownNewCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

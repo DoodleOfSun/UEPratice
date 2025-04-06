@@ -11,6 +11,7 @@
 #include "InputActionValue.h"
 #include "EnhancedInputSubsystems.h"
 #include "Engine/LocalPlayer.h"
+#include "TopDownNewCharacter.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -47,12 +48,26 @@ void ATopdownPraticePlayerController::SetupInputComponent()
 		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Triggered, this, &ATopdownPraticePlayerController::OnSetDestinationTriggered);
 		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Completed, this, &ATopdownPraticePlayerController::OnSetDestinationReleased);
 		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Canceled, this, &ATopdownPraticePlayerController::OnSetDestinationReleased);
+		EnhancedInputComponent->BindAction(SetAttackAction, ETriggerEvent::Started, this, &ATopdownPraticePlayerController::OnAttackPressed);
+
+		// 공격 이벤트 바인딩
+		/*
+		if (SetAttackAction)
+		{
+			EnhancedInputComponent->BindAction(SetAttackAction, ETriggerEvent::Triggered, this, &ATopdownPraticePlayerController::OnAttackPressed);
+		}
+		else
+		{
+		}*/
 
 		// Setup touch input events
 		EnhancedInputComponent->BindAction(SetDestinationTouchAction, ETriggerEvent::Started, this, &ATopdownPraticePlayerController::OnInputStarted);
 		EnhancedInputComponent->BindAction(SetDestinationTouchAction, ETriggerEvent::Triggered, this, &ATopdownPraticePlayerController::OnTouchTriggered);
 		EnhancedInputComponent->BindAction(SetDestinationTouchAction, ETriggerEvent::Completed, this, &ATopdownPraticePlayerController::OnTouchReleased);
 		EnhancedInputComponent->BindAction(SetDestinationTouchAction, ETriggerEvent::Canceled, this, &ATopdownPraticePlayerController::OnTouchReleased);
+
+		// 공격 이벤트 바인딩
+		//InputComponent->BindAction("Attack", EInputEvent::IE_Pressed, this, &ATopdownPraticePlayerController::OnAttackPressed);
 	}
 	else
 	{
@@ -122,4 +137,15 @@ void ATopdownPraticePlayerController::OnTouchReleased()
 {
 	bIsTouch = false;
 	OnSetDestinationReleased();
+}
+
+
+void ATopdownPraticePlayerController::OnAttackPressed()
+{
+	auto playerAvatar = Cast<ATopDownNewCharacter>(GetPawn());
+	if(playerAvatar->CanAttack())
+	{
+		UE_LOG(LogTemplateCharacter, Warning, TEXT("Attack!"));
+		playerAvatar->Attack();	
+	}
 }

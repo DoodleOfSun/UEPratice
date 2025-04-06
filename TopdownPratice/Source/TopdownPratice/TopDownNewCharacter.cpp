@@ -48,7 +48,17 @@ void ATopDownNewCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	UNewAnimInstance* animInst = Cast<UNewAnimInstance>(GetMesh()->GetAnimInstance());
-	animInst->Speed = GetCharacterMovement()->Velocity.Size();
+	animInst->Speed = GetCharacterMovement()->Velocity.Size2D();
+
+	if (_AttackCountingDown == AttackInterval)
+	{
+		animInst->state = EPlayerState::Attack;
+	}
+	
+	if (_AttackCountingDown > 0.0f)
+	{
+		_AttackCountingDown -= DeltaTime;
+	}
 }
 
 // Called to bind functionality to input
@@ -70,6 +80,16 @@ bool ATopDownNewCharacter::IsKilled()
 
 bool ATopDownNewCharacter::CanAttack()
 {
-	return (_AttackCountingDown <= 0.0f);
+	UNewAnimInstance* animInst = Cast<UNewAnimInstance>(GetMesh()->GetAnimInstance());
+	return (_AttackCountingDown <= 0.0f && animInst->state == EPlayerState::Locomotion);
 }
 
+void ATopDownNewCharacter::Attack()
+{
+	_AttackCountingDown = AttackInterval;
+}
+
+void ATopDownNewCharacter::DieProcess()
+{
+	Destroy();
+}
