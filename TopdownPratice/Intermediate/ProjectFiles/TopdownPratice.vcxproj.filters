@@ -39,6 +39,12 @@
     <ClCompile Include="..\..\Source\TopdownPratice\DefenseTower.h">
       <Filter>Source\TopdownPratice</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\Enemy.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\Enemy.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TopdownPratice\NewAnimInstance.cpp">
       <Filter>Source\TopdownPratice</Filter>
     </ClCompile>

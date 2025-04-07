@@ -8,6 +8,7 @@
 /NODEFAULTLIB
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\TopdownPraticeEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\DefenseTower.gen.cpp.obj"
+"C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\Enemy.gen.cpp.obj"
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\NewAnimInstance.gen.cpp.obj"
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\Projectile.gen.cpp.obj"
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\TopDownNewCharacter.gen.cpp.obj"
@@ -18,6 +19,7 @@
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\TopDownPraticeInstance.gen.cpp.obj"
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\TopdownPraticePlayerController.gen.cpp.obj"
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\DefenseTower.cpp.obj"
+"C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\Enemy.cpp.obj"
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\NewAnimInstance.cpp.obj"
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\Projectile.cpp.obj"
 "C:\Users\owner\Desktop\ProjectForUE\UEPratice\TopdownPratice\Intermediate\Build\Win64\x64\UnrealEditor\Development\TopdownPratice\TopDownNewCharacter.cpp.obj"
