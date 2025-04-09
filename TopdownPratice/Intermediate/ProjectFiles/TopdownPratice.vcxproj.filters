@@ -45,6 +45,18 @@
     <ClCompile Include="..\..\Source\TopdownPratice\Enemy.h">
       <Filter>Source\TopdownPratice</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\EnemyAnimInstance.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\EnemyAnimInstance.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\MyAIController.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\MyAIController.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TopdownPratice\NewAnimInstance.cpp">
       <Filter>Source\TopdownPratice</Filter>
     </ClCompile>
