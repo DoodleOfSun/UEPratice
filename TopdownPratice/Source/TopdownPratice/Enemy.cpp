@@ -4,7 +4,8 @@
 #include "Enemy.h"
 #include "Perception//PawnSensingComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
-//#include "EnemyController.h"
+#include "MyAIController.h"
+#include "EnemyAnimInstance.h"
 
 // Sets default values
 AEnemy::AEnemy()
@@ -26,8 +27,8 @@ void AEnemy::BeginPlay()
 void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	/*auto animInst = Cast<UEnemyAnimInstance>(GetMesh()->GetAnimInstance());
-	animInst->Speed = GetCharacterMovement()->Velocity.Size2D();
+	auto animInst = Cast<UEnemyAnimInstance>(GetMesh()->GetAnimInstance());
+	animInst->SpeedEnemy = GetCharacterMovement()->Velocity.Size2D();
 
 	if (_AttackCountingDown == AttackInterval)
 	{
@@ -42,9 +43,9 @@ void AEnemy::Tick(float DeltaTime)
 	if (_ChasedTarget != nullptr && animInst->State == EEnemyState::Locomotion)
 	{
 		auto enemyController = 
-			Cast<AEnemyController>(GetController());
-		enemyController->MakeAttackDecision
-	}*/
+			Cast<AMyAIController>(GetController());
+		enemyController->MakeAttackDecision(_ChasedTarget);
+	}
 }
 
 int AEnemy::GetHealthPoints()
@@ -54,59 +55,57 @@ int AEnemy::GetHealthPoints()
 
 bool AEnemy::IsKilled()
 {
-	return _HealthPoints <= 0;
+	return (_HealthPoints <= 0.0f);
 }
 
 bool AEnemy::CanAttack()
 {
-	return _ChasedTarget != nullptr && _AttackCountingDown <= 0.0f;
+	auto animInst = GetMesh()->GetAnimInstance();
+	auto enemyAnimInst = Cast<UEnemyAnimInstance>(animInst);
+	return (_AttackCountingDown <= 0.0f && enemyAnimInst->State == EEnemyState::Locomotion);
 }
 
 bool AEnemy::Chase(APawn* targetPawn)
 {
-	/*if (targetPawn == nullptr)
+	auto animInst = GetMesh()->GetAnimInstance();
+	auto enemyAnimInst =
+		Cast<UEnemyAnimInstance>(animInst);
+	if (targetPawn != nullptr && enemyAnimInst->State == EEnemyState::Locomotion)
 	{
-		return false;
+		auto enemyController =
+			Cast<AMyAIController>(GetController());
+		enemyController->MoveToActor(targetPawn, 90.0f);
 	}
 	_ChasedTarget = targetPawn;
-	auto enemyController = Cast<AEnemyController>(GetController());
-	if (enemyController != nullptr)
-	{
-		enemyController->MoveToActor(targetPawn);
-	}*/
-
 	return true;
 }
 
 void AEnemy::Attack()
 {
-	/*if (_ChasedTarget == nullptr)
-	{
-		return;
-	}
-	auto targetEnemy = Cast<AEnemy>(targetPawn);
-	if (targetEnemy != nullptr)
-	{
-		targetEnemy->Hit(Strength);
-	}
-	_AttackCountingDown = AttackInterval;*/
+	UE_LOG(LogTemp, Warning, TEXT("적이 공격중!"));
+	GetController()->StopMovement();
+	_AttackCountingDown = AttackInterval;
 }
 
 void AEnemy::Hit(int damage)
 {
-	/*_HealthPoints -= damage;
-	if (_HealthPoints <= 0)
+	_HealthPoints -= damage;
+
+	auto animInst = GetMesh()->GetAnimInstance();
+	auto enemyAnimInst =
+		Cast<UEnemyAnimInstance>(animInst);
+	enemyAnimInst->State = EEnemyState::Hit;
+
+	if (IsKilled())
 	{
 		DieProcess();
-	}*/
+	}
 }
 
 void AEnemy::DieProcess()
 {
-	/*auto animInst = Cast<UEnemyAnimInstance>(GetMesh()->GetAnimInstance());
-	animInst->State = EEnemyState::Die;
-	GetCharacterMovement()->StopMovementImmediately();
-	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	GetMesh()->SetCollisionEnabled(ECollisionEnabled::NoCollision);*/
+	PrimaryActorTick.bCanEverTick = false;
+	K2_DestroyActor();
+	GEngine->ForceGarbageCollection(true);
 }
 

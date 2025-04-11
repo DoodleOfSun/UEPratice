@@ -15,5 +15,4 @@ class TOPDOWNPRATICE_API AMyAIController : public AAIController
 	GENERATED_BODY()
 public:
 	void MakeAttackDecision(APawn *targetPawn);
-
 };

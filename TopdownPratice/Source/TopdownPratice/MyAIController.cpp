@@ -12,7 +12,6 @@ void AMyAIController::MakeAttackDecision(APawn* targetPawn)
 	auto dist = FVector::Dist2D(
 	targetPawn->GetActorLocation(),
 		GetPawn()->GetTargetLocation());
-
 	if (dist <= controlledCharacter->AttackRange && controlledCharacter->CanAttack())
 	{
 		controlledCharacter->Attack();

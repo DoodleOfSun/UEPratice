@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TopdownPraticeModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+607b1cf947e2a7cd8865bed5499d4ab85c0b9d07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de068e98bf6b394952a9b77affb93768017bd0b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("TopdownPraticeModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TopdownPraticeModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
