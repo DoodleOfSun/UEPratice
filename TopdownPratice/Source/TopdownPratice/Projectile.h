@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/SphereComponent.h"
+#include "Components/StaticMeshComponent.h"
 #include "Projectile.generated.h"
 
 UCLASS(Blueprintable)
@@ -28,8 +30,22 @@ protected:
 	virtual void BeginPlay() override;
 	float _LifeCountingDown;
 
+private:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,
+		Category = "Tower Component",
+		meta = (AllowprivateAccess = "true"))
+	UStaticMeshComponent* _MeshComponent;
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+
+
+
+	FORCEINLINE UStaticMeshComponent* GetMeshComponent() const
+	{
+		return _MeshComponent;
+	}
 };

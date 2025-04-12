@@ -11,7 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeDefenseTower() {}
 
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_AActor();
-ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 TOPDOWNPRATICE_API UClass* Z_Construct_UClass_ADefenseTower();
 TOPDOWNPRATICE_API UClass* Z_Construct_UClass_ADefenseTower_NoRegister();
@@ -196,7 +196,7 @@ struct Z_Construct_UClass_ADefenseTower_Statics
 		{ "Category", "Tower Params" },
 		{ "ModuleRelativePath", "DefenseTower.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp__BoxComponent_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp__SphereComponent_MetaData[] = {
 		{ "AllowprivateAccess", "true" },
 		{ "Category", "Tower Component" },
 		{ "EditInline", "true" },
@@ -213,7 +213,7 @@ struct Z_Construct_UClass_ADefenseTower_Statics
 	static const UECodeGen_Private::FIntPropertyParams NewProp_ShellDefense;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AttackRange;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReloadInterval;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp__BoxComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp__SphereComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp__MeshComponent;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
@@ -232,14 +232,14 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ADefenseTower_Sta
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ADefenseTower_Statics::NewProp_ShellDefense = { "ShellDefense", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefenseTower, ShellDefense), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShellDefense_MetaData), NewProp_ShellDefense_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADefenseTower_Statics::NewProp_AttackRange = { "AttackRange", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefenseTower, AttackRange), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackRange_MetaData), NewProp_AttackRange_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADefenseTower_Statics::NewProp_ReloadInterval = { "ReloadInterval", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefenseTower, ReloadInterval), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReloadInterval_MetaData), NewProp_ReloadInterval_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADefenseTower_Statics::NewProp__BoxComponent = { "_BoxComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefenseTower, _BoxComponent), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp__BoxComponent_MetaData), NewProp__BoxComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADefenseTower_Statics::NewProp__SphereComponent = { "_SphereComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefenseTower, _SphereComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp__SphereComponent_MetaData), NewProp__SphereComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADefenseTower_Statics::NewProp__MeshComponent = { "_MeshComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefenseTower, _MeshComponent), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp__MeshComponent_MetaData), NewProp__MeshComponent_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADefenseTower_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADefenseTower_Statics::NewProp_HealthHPoints,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADefenseTower_Statics::NewProp_ShellDefense,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADefenseTower_Statics::NewProp_AttackRange,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADefenseTower_Statics::NewProp_ReloadInterval,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADefenseTower_Statics::NewProp__BoxComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADefenseTower_Statics::NewProp__SphereComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADefenseTower_Statics::NewProp__MeshComponent,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ADefenseTower_Statics::PropPointers) < 2048);
@@ -283,10 +283,10 @@ ADefenseTower::~ADefenseTower() {}
 struct Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADefenseTower, ADefenseTower::StaticClass, TEXT("ADefenseTower"), &Z_Registration_Info_UClass_ADefenseTower, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADefenseTower), 3323964185U) },
+		{ Z_Construct_UClass_ADefenseTower, ADefenseTower::StaticClass, TEXT("ADefenseTower"), &Z_Registration_Info_UClass_ADefenseTower, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADefenseTower), 2613304986U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_1865139276(TEXT("/Script/TopdownPratice"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_3297933623(TEXT("/Script/TopdownPratice"),
 	Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

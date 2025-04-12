@@ -114,5 +114,11 @@
     <ClCompile Include="..\..\Source\TopdownPratice\TopdownPraticePlayerController.h">
       <Filter>Source\TopdownPratice</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\Weapon.cpp">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TopdownPratice\Weapon.h">
+      <Filter>Source\TopdownPratice</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
