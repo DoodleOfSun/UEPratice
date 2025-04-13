@@ -17,7 +17,8 @@ struct FHitResult;
 #endif
 #define TOPDOWNPRATICE_DefenseTower_generated_h
 
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnMeshBeginOverlap); \
 	DECLARE_FUNCTION(execOnEndOverlap); \
 	DECLARE_FUNCTION(execOnBeginOverlap); \
 	DECLARE_FUNCTION(execCanFire); \
@@ -25,7 +26,7 @@ struct FHitResult;
 	DECLARE_FUNCTION(execGetHealthPoints);
 
 
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesADefenseTower(); \
 	friend struct Z_Construct_UClass_ADefenseTower_Statics; \
@@ -34,7 +35,7 @@ public: \
 	DECLARE_SERIALIZER(ADefenseTower)
 
 
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ADefenseTower(ADefenseTower&&); \
@@ -46,13 +47,13 @@ public: \
 	NO_API virtual ~ADefenseTower();
 
 
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_11_PROLOG
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_14_GENERATED_BODY \
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_10_PROLOG
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

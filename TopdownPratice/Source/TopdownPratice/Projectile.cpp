@@ -2,6 +2,7 @@
 
 
 #include "Projectile.h"
+#include "TopDownNewCharacter.h"
 
 // Sets default values
 AProjectile::AProjectile()
@@ -18,12 +19,44 @@ void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	_LifeCountingDown = Lifespan;
 }
 
 // Called every frame
 void AProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (_LifeCountingDown > 0.0f)
+	{
+		FVector currentLocation = GetActorLocation();
+		FVector vel = GetActorRotation().RotateVector(FVector::ForwardVector) * Speed * DeltaTime;
+		FVector nextLocation = currentLocation + vel;
+		SetActorLocation(nextLocation);
 
+		//Ray cast check
+		FHitResult hitResult;
+		FCollisionObjectQueryParams objCollisionQueryParams;
+		objCollisionQueryParams.AddObjectTypesToQuery(ECollisionChannel::ECC_Pawn);
+
+		if (GetWorld()->LineTraceSingleByObjectType(hitResult, currentLocation, nextLocation, objCollisionQueryParams))
+		{
+			auto playerAvatar = Cast<ATopDownNewCharacter>(hitResult.GetActor());
+			if (playerAvatar != nullptr)
+			{
+				playerAvatar->Hit(Damage);
+
+				PrimaryActorTick.bCanEverTick = false;
+				Destroy();
+			}
+		}
+
+		//Reduce time
+		_LifeCountingDown -= DeltaTime;
+	}
+	else
+	{
+		PrimaryActorTick.bCanEverTick = false;
+		Destroy();
+	}
 }
 

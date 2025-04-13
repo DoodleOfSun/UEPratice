@@ -29,6 +29,7 @@ ATopDownNewCharacter::ATopDownNewCharacter()
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
 
+
 	auto charactorMovement = GetCharacterMovement();
 	charactorMovement->bOrientRotationToMovement = true;
 	charactorMovement->RotationRate = FRotator(0.0f, 640.0f, 0.0f);
@@ -87,6 +88,16 @@ bool ATopDownNewCharacter::CanAttack()
 void ATopDownNewCharacter::Attack()
 {
 	_AttackCountingDown = AttackInterval;
+}
+
+void ATopDownNewCharacter::Hit(int damage)
+{
+	/*_HealthPoints -= damage;
+	if (_HealthPoints <= 0.0f)
+	{
+		DieProcess();
+	}*/
+	UE_LOG(LogTemp, Warning, TEXT("Hit!"));
 }
 
 void ATopDownNewCharacter::DieProcess()

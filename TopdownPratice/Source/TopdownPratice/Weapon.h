@@ -31,9 +31,9 @@ protected:
 	UFUNCTION()
 	void OnWeaponBeginOverlap(AActor* OverlappedActor, AActor* OtherActor);
 
-	bool IsWithinAttackRange(float AttackRange, AActor* Target);
-
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	bool IsWithinAttackRange(float AttackRange, AActor* Target);
 };

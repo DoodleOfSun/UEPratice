@@ -18,24 +18,22 @@ public:
 	AProjectile();
 
 	UPROPERTY(EditAnywhere, Category = "Projectile Params")
-	float Speed = 100.0f;
+	float Speed = 500.0f;
 
 	UPROPERTY(EditAnywhere, Category = "Projectile Params")
 	float Lifespan = 5.0f;
 
 	UPROPERTY(EditAnywhere, Category = "Projectile Params")
-	float Damage = 10.0f;
+	float Damage = 30.0f;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	float _LifeCountingDown;
 
-private:
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,
-		Category = "Tower Component",
-		meta = (AllowprivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Visual, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* _MeshComponent;
+
+	float _LifeCountingDown;
 
 public:
 	// Called every frame

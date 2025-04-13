@@ -59,10 +59,10 @@ public:
 		Category = "Pangaea | PlayerCharacter")
 	void Attack();
 
-	/*
+	
 	UFUNCTION(BlueprintCallable,
 		Category = "Pangaea | PlayerCharacter")
-	void Hit(int damage);*/
+	void Hit(int damage);
 
 
 	UFUNCTION(BlueprintCallable,

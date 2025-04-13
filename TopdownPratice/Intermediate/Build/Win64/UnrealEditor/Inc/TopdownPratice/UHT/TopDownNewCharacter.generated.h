@@ -16,6 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_TopDownNewCharacter_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execDieProcess); \
+	DECLARE_FUNCTION(execHit); \
 	DECLARE_FUNCTION(execAttack); \
 	DECLARE_FUNCTION(execCanAttack); \
 	DECLARE_FUNCTION(execIsKilled); \

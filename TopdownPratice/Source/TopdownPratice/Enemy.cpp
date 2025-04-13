@@ -23,11 +23,8 @@ AEnemy::AEnemy()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("Failed to load BP_Hammer! Check the path or asset type."));
 		_WeaponClass = nullptr; // 안전을 위해 nullptr로 초기화
 	}
-
-	//_WeaponClass = (UClass*)blueprint_finder.Object->GeneratedClass;
 }
 
 // Called when the game starts or when spawned
@@ -47,6 +44,8 @@ void AEnemy::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	auto animInst = Cast<UEnemyAnimInstance>(GetMesh()->GetAnimInstance());
 	animInst->SpeedEnemy = GetCharacterMovement()->Velocity.Size2D();
+
+
 
 	if (_AttackCountingDown == AttackInterval)
 	{
@@ -100,7 +99,6 @@ bool AEnemy::Chase(APawn* targetPawn)
 
 void AEnemy::Attack()
 {
-	UE_LOG(LogTemp, Warning, TEXT("적이 공격중!"));
 	GetController()->StopMovement();
 	_AttackCountingDown = AttackInterval;
 }

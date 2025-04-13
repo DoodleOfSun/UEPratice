@@ -36,8 +36,6 @@ void AWeapon::Tick(float DeltaTime)
 
 void AWeapon::OnWeaponBeginOverlap(AActor* OverlappedActor, AActor* OtherActor)
 {
-	UE_LOG(LogTemp, Log, TEXT("Weapon overlapped"));
-
 	auto character = Cast<ACharacter>(OtherActor);
 
 	if (character == nullptr)
