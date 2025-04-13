@@ -15,14 +15,14 @@ class APawn;
 #endif
 #define TOPDOWNPRATICE_Enemy_generated_h
 
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execChase); \
 	DECLARE_FUNCTION(execCanAttack); \
 	DECLARE_FUNCTION(execIsKilled); \
 	DECLARE_FUNCTION(execGetHealthPoints);
 
 
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEnemy(); \
 	friend struct Z_Construct_UClass_AEnemy_Statics; \
@@ -31,7 +31,7 @@ public: \
 	DECLARE_SERIALIZER(AEnemy)
 
 
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AEnemy(AEnemy&&); \
@@ -43,13 +43,13 @@ public: \
 	NO_API virtual ~AEnemy();
 
 
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_9_PROLOG
-#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_12_GENERATED_BODY \
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_10_PROLOG
+#define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_12_ENHANCED_CONSTRUCTORS \
+	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_Enemy_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

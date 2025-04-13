@@ -9,12 +9,17 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef TOPDOWNPRATICE_DefenseTower_generated_h
 #error "DefenseTower.generated.h already included, missing '#pragma once' in DefenseTower.h"
 #endif
 #define TOPDOWNPRATICE_DefenseTower_generated_h
 
 #define FID_Users_owner_Desktop_ProjectForUE_UEPratice_TopdownPratice_Source_TopdownPratice_DefenseTower_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnEndOverlap); \
+	DECLARE_FUNCTION(execOnBeginOverlap); \
 	DECLARE_FUNCTION(execCanFire); \
 	DECLARE_FUNCTION(execIsDestroyed); \
 	DECLARE_FUNCTION(execGetHealthPoints);

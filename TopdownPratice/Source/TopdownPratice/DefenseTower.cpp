@@ -2,6 +2,9 @@
 
 
 #include "DefenseTower.h"
+#include "Projectile.h"
+#include "Kismet/KismetMathLibrary.h"	
+#include "TopDownNewCharacter.h"
 
 // Sets default values
 ADefenseTower::ADefenseTower()
@@ -13,6 +16,13 @@ ADefenseTower::ADefenseTower()
 
 	_MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Static Mesh"));
 	SetRootComponent(_MeshComponent);
+
+	_SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &ADefenseTower::OnBeginOverlap);
+	_SphereComponent->OnComponentEndOverlap.AddDynamic(this, &ADefenseTower::OnEndOverlap);
+
+	static ConstructorHelpers::FObjectFinder<UBlueprint> blueprint_finder(
+		TEXT("Blueprint'/Game/TopDown/Blueprints/BP_Fireball'"));
+	_FireballClass = (UClass*)blueprint_finder.Object->GeneratedClass;
 }
 
 
@@ -20,14 +30,27 @@ ADefenseTower::ADefenseTower()
 void ADefenseTower::BeginPlay()
 {
 	Super::BeginPlay();
-
+	SetActorTickInterval(0.5f);
 }
 
 // Called every frame
 void ADefenseTower::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (_Target != nullptr) Fire();
+}
 
+void ADefenseTower::Fire()
+{
+	auto fireball = Cast<AProjectile>(GetWorld()->SpawnActor(_FireballClass)); 
+	GetWorld()->SpawnActor(_FireballClass);
+	FVector startLocation = GetActorLocation();
+	startLocation.Z += 100.0f;
+	FVector targetLocation = _Target->GetActorLocation();
+	targetLocation.Z = startLocation.Z;
+	FRotator rotation = UKismetMathLibrary::FindLookAtRotation(startLocation, targetLocation);
+	fireball->SetActorLocation(startLocation);
+	fireball->SetActorRotation(rotation);
 }
 
 int ADefenseTower::GetHealthPoints()
@@ -45,3 +68,20 @@ bool ADefenseTower::CanFire()
 	return (_ReloadCountingDown <= 0.0f);
 }
 
+void ADefenseTower::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
+	bool bFromSweep, const FHitResult& SweepResult)
+{
+	// Your existing logic for OnBeginOverlap
+	ATopDownNewCharacter* playerAvatar = Cast<ATopDownNewCharacter>(OtherActor);
+	if (playerAvatar)
+	{
+		_Target = playerAvatar;
+	}
+}
+
+void ADefenseTower::OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	// Your existing logic for OnEndOverlap
+}

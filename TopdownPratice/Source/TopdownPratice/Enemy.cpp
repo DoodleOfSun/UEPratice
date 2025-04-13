@@ -14,6 +14,20 @@ AEnemy::AEnemy()
 	PrimaryActorTick.bCanEverTick = true;
 	PawnSensingComponent = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensor"));
 
+	static ConstructorHelpers::FObjectFinder<UBlueprint> blueprint_finder(
+		TEXT("Blueprint'/Game/TopDown/Blueprints/BP_Hammer'"));
+
+	if (blueprint_finder.Succeeded() && blueprint_finder.Object && blueprint_finder.Object->GeneratedClass)
+	{
+		_WeaponClass = (UClass*)blueprint_finder.Object->GeneratedClass;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Failed to load BP_Hammer! Check the path or asset type."));
+		_WeaponClass = nullptr; // 안전을 위해 nullptr로 초기화
+	}
+
+	//_WeaponClass = (UClass*)blueprint_finder.Object->GeneratedClass;
 }
 
 // Called when the game starts or when spawned
@@ -21,6 +35,10 @@ void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	_HealthPoints = HealthPoints;
+	_Weapon = Cast<AWeapon>(GetWorld()->SpawnActor(_WeaponClass));
+	_Weapon->Holder = this;
+	_Weapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, FName("hand_rSocket"));
+
 }
 
 // Called every frame

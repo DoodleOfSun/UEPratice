@@ -33,10 +33,11 @@ public:
 	// 또 언더바는 프로텍션 걸린 변수들 이름 앞에 붙여주는게 규약이다. 퍼블릭과 구분된다.
 protected:
 	// Called when the game starts or when spawned
-	int _HealthPoints;
-	float _ReloadCountingDown;
 	virtual void BeginPlay() override;
 
+	int _HealthPoints;
+	float _ReloadCountingDown;
+	UClass* _FireballClass;
 	// 세번째 퍼블릭에는 직접 정의하고 호출할 함수들을 프로토타입 선언한다.
 public:
 
@@ -65,6 +66,17 @@ public:
 protected:
 	void DestroyProcess();
 
+	UFUNCTION()
+	void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+		UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
+		bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+		UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+
+
 private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,
@@ -78,7 +90,7 @@ private:
 	UStaticMeshComponent* _MeshComponent;
 
 public:
-	FORCEINLINE USphereComponent* GetBoxComponet() const
+	FORCEINLINE USphereComponent* GetSphereComponent() const
 	{
 		return _SphereComponent;
 	}
@@ -87,4 +99,6 @@ public:
 	{
 		return _MeshComponent;
 	}
+
+	class ATopDownNewCharacter* _Target = nullptr;
 };
